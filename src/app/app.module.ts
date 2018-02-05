@@ -1,10 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { NgZorroAntdModule } from 'ng-zorro-antd';
+
 import { AppComponent } from './app.component';
+
+import { appRoutes } from './app.routes';
 
 @NgModule({
   declarations: [
@@ -15,7 +19,7 @@ import { AppComponent } from './app.component';
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    NgZorroAntdModule.forRoot()
+    RouterModule.forRoot(appRoutes)
   ],
   bootstrap: [AppComponent]
 })
