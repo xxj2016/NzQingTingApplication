@@ -1,0 +1,118 @@
+.header {
+    position: relative;
+    width: 100%;
+    -webkit-box-flex: 0;
+    -ms-flex: none;
+    flex: none;
+    background: #fff;
+    box-shadow: 0 0 0 0 hsla(0, 0%, 87%, .3);
+    z-index: 4;
+    
+    .header-box {
+        margin: 0 auto;
+        padding: 15px 0;
+        width: 1002px;
+        position: relative;
+
+        .header-box-a {
+            color: #606060;
+            text-decoration: none;
+
+            img {
+                border-style: none;
+            }
+
+            .header-box-img {
+                display: inline-block;
+                width: 180px;
+            }
+        }
+
+        .header-right {
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin: 15px 0;
+
+            .header-nav {
+                display: inline-block;
+
+                
+                .header-nav-item {
+                    font-size: 18px;
+                    font-weight: 400;
+                    color: #333;
+                    line-height: 32px;
+                    margin: 0 40px 0 0;
+                    display: inline-block;
+
+                    &:hover {
+                        color: #e13430;
+                        cursor: pointer;
+                    }
+                }
+
+                .header-nav-item.active {
+                    color: #e13430;
+                    border-bottom: 4px solid #e13430;
+                    padding-bottom: 6px;
+                }
+            }
+
+            .header-user {
+                float: right;
+                width: 38px;
+                height: 38px;
+                margin-left: 15px;
+                border-radius: 100%;
+                overflow: hidden;
+                display: inline-block;
+                font-size: 18px;
+                font-weight: 400;
+                color: #333;
+                line-height: 32px;
+                cursor: pointer;
+                
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            .header-search {
+                float: right;
+
+                .search-box {
+                    position: relative;
+                    margin: 0 auto;
+                    width: 270px;
+
+                    input {
+                        width: 270px;
+                        padding: 11px;
+                        font-size: 14px;
+
+                        display: inline-block;
+                        height: 38px;
+                        border: 1px solid #ccc;
+                        border-radius: 6px;
+                        outline: none;
+                        background: #fff;
+                        margin: 0;
+                        line-height: 14px;
+                    }
+
+                    .search-icon {
+                        position: absolute;
+                        top: 9px;
+                        right: 10px;
+                        cursor: pointer;
+                        font-size: 24px;
+                        width: 22px;
+                        height: 24px;
+                    }
+                }
+            }
+        }
+    }
+}
