@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { RouterModule } from '@angular/router';
 
+import { HeaderComponent } from '../header/header.component';
 import { WorkspaceComponent } from './workspace.component';
 
 import { workspaceRoutes } from './workspace.routes';
@@ -15,7 +16,8 @@ import { NgZorroAntdModule } from 'ng-zorro-antd';
     RouterModule.forChild(workspaceRoutes)
   ],
   declarations: [
-    WorkspaceComponent
+    WorkspaceComponent,
+    HeaderComponent
   ]
 })
 export class WorkspaceModule { }
