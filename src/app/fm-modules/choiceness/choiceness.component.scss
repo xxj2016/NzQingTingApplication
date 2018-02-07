@@ -1,0 +1,99 @@
+.carousel-container {
+    width: 1004px;
+    height: 328px;
+    background: red;
+    margin: 0 auto;
+
+    .ant-carousel .slick-slide {
+        text-align: center;
+        height: 328px;
+        line-height: 328px;
+        background: -webkit-linear-gradient( 9deg, rgb(255,142,39) 0%, rgb(215,45,96) 100%);
+        color: #fff;
+        overflow: hidden;
+    }
+
+    h3 {
+        color: #fff;
+    }
+}
+.choiceness-container {
+    width: 1004px;
+    margin: 15px auto 0;
+    background: #f5f5f8;
+
+    .left {
+        background: #f5f5f8;
+
+        .choiceness-box {
+            position: relative;
+            background: #ffffff;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 4px 0 rgba(0,0,0,.05);
+
+            .box-title {
+                // background: red;
+                display: flex;
+                border-bottom: 1px solid #eee;
+                padding-bottom: 10px;
+                margin-bottom: 10px;
+
+                .title-left {
+                    flex: 1;
+
+                    .title-icon {
+                        display: inline-block;
+                        width: 26px;
+                        height: 26px;
+                        margin-right: 10px;
+                        float: left;
+                    }
+                    .jingpinneirong_1x {
+                        background-position: -365px -5px;
+                    }
+                    .sprite3 {
+                        background-image: url('../../../assets/images/sprite3.png');
+                    }
+
+                    h2 {
+                        display: inline-block;
+                    }
+                    ul {
+                        display: inline-block;
+
+                        .label {
+                            color: #3d3d3d;
+                            margin-left: 5px;
+                            display: inline-block;
+                            &:first-child {
+                                font-size: 18px;
+                                color: #cccccc;
+                                cursor: default;
+                            }
+                        }
+                        .label + .label:hover {
+                            color: red;
+                            cursor: pointer;
+                        }
+                    }
+                }
+                .title-right {
+                    display: inline-block;
+                    line-height: 27px;
+
+                    &:hover {
+                        color: red;
+                        cursor: pointer;
+                    }
+                }
+            }
+            .box-content {
+    
+            }
+        }
+    }
+    .right {
+        background: blue;
+    }
+}

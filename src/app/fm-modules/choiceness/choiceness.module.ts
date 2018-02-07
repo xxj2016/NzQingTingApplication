@@ -5,9 +5,12 @@ import { ChoicenessComponent } from './choiceness.component';
 
 import { choicenessRoutes } from './choiceness.routes';
 
+import { NgZorroAntdModule } from 'ng-zorro-antd';
+
 @NgModule({
   imports: [
     CommonModule,
+    NgZorroAntdModule,
     RouterModule.forChild(choicenessRoutes)
   ],
   declarations: [

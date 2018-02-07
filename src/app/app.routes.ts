@@ -7,5 +7,9 @@ export const appRoutes = [
     {
         path: 'workspace',
         loadChildren: './global-layout/workspace/workspace.module#WorkspaceModule'
+    },
+    {
+        path: '**',
+        redirectTo: 'workspace'
     }
 ];

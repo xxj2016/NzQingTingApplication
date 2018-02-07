@@ -1,3 +1,36 @@
-<p>
-  choiceness works!
-</p>
+<div class="carousel-container">
+    <nz-carousel nzAutoPlay>
+        <div nz-carousel-content *ngFor="let index of array">
+            <h3>{{index}}</h3>
+        </div>
+    </nz-carousel>
+</div>
+<div class="choiceness-container" nz-row [nzType]="'flex'" [nzJustify]="'space-between'">
+    <div class="left" nz-col [nzSpan]="16">
+        <div class="choiceness-box">
+            <div class="box-title">
+                <div class="title-left">
+                    <div class="title-icon sprite3 jingpinneirong_1x"></div>
+                    <h2>精品内容</h2>
+                    <ul>
+                        <li class="label"> > </li>
+                        <li class="label">历史</li>
+                        <li class="label">诗词</li>
+                        <li class="label">小课</li>
+                        <li class="label">文化</li>
+                        <li class="label">更多</li>
+                    </ul>
+                </div>
+                <div class="title-right">
+                    换一批
+                </div>
+            </div>
+            <div class="box-content">
+                我是内容
+            </div>
+        </div>
+    </div>
+    <div class="right" nz-col [nzSpan]="7">
+        2342
+    </div>
+</div>

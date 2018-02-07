@@ -7,14 +7,16 @@ import { HeaderComponent } from '../header/header.component';
 import { WorkspaceComponent } from './workspace.component';
 
 import { workspaceRoutes } from './workspace.routes';
+
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 
 @NgModule({
   imports: [
     CommonModule,
-    NgZorroAntdModule.forRoot(),
+    NgZorroAntdModule,
     RouterModule.forChild(workspaceRoutes)
   ],
+
   declarations: [
     WorkspaceComponent,
     HeaderComponent
