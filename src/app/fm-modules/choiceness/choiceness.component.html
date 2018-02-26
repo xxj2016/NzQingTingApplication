@@ -1,393 +1,43 @@
 <div class="carousel-container">
     <nz-carousel>
-        <div nz-carousel-content *ngFor="let item of items">
-            <img src="{{item.img_url}}" alt="">
+        <div nz-carousel-content *ngFor="let banner of banners">
+            <img src="{{banner.img_url}}" alt="">
         </div>
     </nz-carousel>
 </div>
 <div class="choiceness-container" nz-row [nzType]="'flex'" [nzJustify]="'space-between'">
     <div class="left" nz-col [nzSpan]="16">
-        <div class="choiceness-box">
-            <div class="box-title">
-                <div class="title-left">
-                    <div class="title-icon sprite3 jingpinneirong_1x"></div>
-                    <h2>精品内容</h2>
-                    <ul>
-                        <li class="label"> > </li>
-                        <li class="label">历史</li>
-                        <li class="label">诗词</li>
-                        <li class="label">小课</li>
-                        <li class="label">文化</li>
-                        <li class="label">更多</li>
-                    </ul>
+        <div class="choiceness-box" *ngFor="let category of categories;" >
+                <div class="box-title">
+                    <div class="title-left">
+                        <div class="title-icon sprite3 jingpinneirong_1x"></div>
+                        <h2>{{category.attr.name}}</h2>
+                        <ul>
+                            <li class="label"> > </li>
+                            <li class="label" *ngFor="let item of category.attr.attrs" >{{item.name}}</li>
+                            <li class="label">更多</li>
+                        </ul>
+                    </div>
+                    <div class="title-right">
+                        <span>换一批</span> <i class="anticon anticon-sync"></i>
+                    </div>
                 </div>
-                <div class="title-right">
-                    <span>换一批</span> <i class="anticon anticon-sync"></i>
-                </div>
-            </div>
             <div class="box-content">
-                <div class="box-item">
-                    <div class="item-image">
-                        <div class="backdrop"></div>
-                        <img src="../../../assets/images/logo_otherpage.png" alt="">
-                        <div class="count">
-                            <div class="count-num">
-                                55556
-                            </div>    
+                <!-- 取数组的前四个 -->
+                <div *ngFor="let cate of category.recommends.slice(0,4)"> 
+                    <div class="box-item" >
+                        <div class="item-image">
+                            <div class="backdrop"></div>
+                            <img src="{{cate.img_url}}" alt="">
+                            <div class="count">
+                                <div class="count-num">
+                                    {{cate.playcount}} {{index}}
+                                </div>    
+                            </div>
                         </div>
-                    </div>
-                    <div class="item-desc">
-                        我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述色和开机后即可忽然
-                    </div>
-                </div>
-                <div class="box-item">
-                    <div class="item-image">
-                        <div class="backdrop"></div>
-                        <img src="../../../assets/images/logo_otherpage.png" alt="">
-                        <div class="count">
-                            <div class="count-num">
-                                55556
-                            </div>    
+                        <div class="item-desc">
+                            {{cate.title}}-{{cate.desc}}
                         </div>
-                    </div>
-                    <div class="item-desc">
-                        我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述色和开机后即可忽然
-                    </div>
-                </div>
-                <div class="box-item">
-                    <div class="item-image">
-                        <div class="backdrop"></div>
-                        <img src="../../../assets/images/logo_otherpage.png" alt="">
-                        <div class="count">
-                            <div class="count-num">
-                                55556
-                            </div>    
-                        </div>
-                    </div>
-                    <div class="item-desc">
-                        我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述色和开机后即可忽然
-                    </div>
-                </div>
-                <div class="box-item">
-                    <div class="item-image">
-                        <div class="backdrop"></div>
-                        <img src="../../../assets/images/logo_otherpage.png" alt="">
-                        <div class="count">
-                            <div class="count-num">
-                                55556
-                            </div>    
-                        </div>
-                    </div>
-                    <div class="item-desc">
-                        我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述色和开机后即可忽然
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="choiceness-box">
-            <div class="box-title">
-                <div class="title-left">
-                    <div class="title-icon sprite3 jingpinneirong_1x"></div>
-                    <h2>精品内容</h2>
-                    <ul>
-                        <li class="label"> > </li>
-                        <li class="label">历史</li>
-                        <li class="label">诗词</li>
-                        <li class="label">小课</li>
-                        <li class="label">文化</li>
-                        <li class="label">更多</li>
-                    </ul>
-                </div>
-                <div class="title-right">
-                    <span>换一批</span> <i class="anticon anticon-sync"></i>
-                </div>
-            </div>
-            <div class="box-content">
-                <div class="box-item">
-                    <div class="item-image">
-                        <div class="backdrop"></div>
-                        <img src="../../../assets/images/logo_otherpage.png" alt="">
-                        <div class="count">
-                            <div class="count-num">
-                                55556
-                            </div>    
-                        </div>
-                    </div>
-                    <div class="item-desc">
-                        我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述色和开机后即可忽然
-                    </div>
-                </div>
-                <div class="box-item">
-                    <div class="item-image">
-                        <div class="backdrop"></div>
-                        <img src="../../../assets/images/logo_otherpage.png" alt="">
-                        <div class="count">
-                            <div class="count-num">
-                                55556
-                            </div>    
-                        </div>
-                    </div>
-                    <div class="item-desc">
-                        我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述色和开机后即可忽然
-                    </div>
-                </div>
-                <div class="box-item">
-                    <div class="item-image">
-                        <div class="backdrop"></div>
-                        <img src="../../../assets/images/logo_otherpage.png" alt="">
-                        <div class="count">
-                            <div class="count-num">
-                                55556
-                            </div>    
-                        </div>
-                    </div>
-                    <div class="item-desc">
-                        我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述色和开机后即可忽然
-                    </div>
-                </div>
-                <div class="box-item">
-                    <div class="item-image">
-                        <div class="backdrop"></div>
-                        <img src="../../../assets/images/logo_otherpage.png" alt="">
-                        <div class="count">
-                            <div class="count-num">
-                                55556
-                            </div>    
-                        </div>
-                    </div>
-                    <div class="item-desc">
-                        我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述色和开机后即可忽然
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="choiceness-box">
-            <div class="box-title">
-                <div class="title-left">
-                    <div class="title-icon sprite3 jingpinneirong_1x"></div>
-                    <h2>精品内容</h2>
-                    <ul>
-                        <li class="label"> > </li>
-                        <li class="label">历史</li>
-                        <li class="label">诗词</li>
-                        <li class="label">小课</li>
-                        <li class="label">文化</li>
-                        <li class="label">更多</li>
-                    </ul>
-                </div>
-                <div class="title-right">
-                    <span>换一批</span> <i class="anticon anticon-sync"></i>
-                </div>
-            </div>
-            <div class="box-content">
-                <div class="box-item">
-                    <div class="item-image">
-                        <div class="backdrop"></div>
-                        <img src="../../../assets/images/logo_otherpage.png" alt="">
-                        <div class="count">
-                            <div class="count-num">
-                                55556
-                            </div>    
-                        </div>
-                    </div>
-                    <div class="item-desc">
-                        我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述色和开机后即可忽然
-                    </div>
-                </div>
-                <div class="box-item">
-                    <div class="item-image">
-                        <div class="backdrop"></div>
-                        <img src="../../../assets/images/logo_otherpage.png" alt="">
-                        <div class="count">
-                            <div class="count-num">
-                                55556
-                            </div>    
-                        </div>
-                    </div>
-                    <div class="item-desc">
-                        我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述色和开机后即可忽然
-                    </div>
-                </div>
-                <div class="box-item">
-                    <div class="item-image">
-                        <div class="backdrop"></div>
-                        <img src="../../../assets/images/logo_otherpage.png" alt="">
-                        <div class="count">
-                            <div class="count-num">
-                                55556
-                            </div>    
-                        </div>
-                    </div>
-                    <div class="item-desc">
-                        我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述色和开机后即可忽然
-                    </div>
-                </div>
-                <div class="box-item">
-                    <div class="item-image">
-                        <div class="backdrop"></div>
-                        <img src="../../../assets/images/logo_otherpage.png" alt="">
-                        <div class="count">
-                            <div class="count-num">
-                                55556
-                            </div>    
-                        </div>
-                    </div>
-                    <div class="item-desc">
-                        我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述色和开机后即可忽然
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="choiceness-box">
-            <div class="box-title">
-                <div class="title-left">
-                    <div class="title-icon sprite3 jingpinneirong_1x"></div>
-                    <h2>精品内容</h2>
-                    <ul>
-                        <li class="label"> > </li>
-                        <li class="label">历史</li>
-                        <li class="label">诗词</li>
-                        <li class="label">小课</li>
-                        <li class="label">文化</li>
-                        <li class="label">更多</li>
-                    </ul>
-                </div>
-                <div class="title-right">
-                    <span>换一批</span> <i class="anticon anticon-sync"></i>
-                </div>
-            </div>
-            <div class="box-content">
-                <div class="box-item">
-                    <div class="item-image">
-                        <div class="backdrop"></div>
-                        <img src="../../../assets/images/logo_otherpage.png" alt="">
-                        <div class="count">
-                            <div class="count-num">
-                                55556
-                            </div>    
-                        </div>
-                    </div>
-                    <div class="item-desc">
-                        我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述色和开机后即可忽然
-                    </div>
-                </div>
-                <div class="box-item">
-                    <div class="item-image">
-                        <div class="backdrop"></div>
-                        <img src="../../../assets/images/logo_otherpage.png" alt="">
-                        <div class="count">
-                            <div class="count-num">
-                                55556
-                            </div>    
-                        </div>
-                    </div>
-                    <div class="item-desc">
-                        我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述色和开机后即可忽然
-                    </div>
-                </div>
-                <div class="box-item">
-                    <div class="item-image">
-                        <div class="backdrop"></div>
-                        <img src="../../../assets/images/logo_otherpage.png" alt="">
-                        <div class="count">
-                            <div class="count-num">
-                                55556
-                            </div>    
-                        </div>
-                    </div>
-                    <div class="item-desc">
-                        我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述色和开机后即可忽然
-                    </div>
-                </div>
-                <div class="box-item">
-                    <div class="item-image">
-                        <div class="backdrop"></div>
-                        <img src="../../../assets/images/logo_otherpage.png" alt="">
-                        <div class="count">
-                            <div class="count-num">
-                                55556
-                            </div>    
-                        </div>
-                    </div>
-                    <div class="item-desc">
-                        我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述色和开机后即可忽然
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="choiceness-box">
-            <div class="box-title">
-                <div class="title-left">
-                    <div class="title-icon sprite3 jingpinneirong_1x"></div>
-                    <h2>精品内容</h2>
-                    <ul>
-                        <li class="label"> > </li>
-                        <li class="label">历史</li>
-                        <li class="label">诗词</li>
-                        <li class="label">小课</li>
-                        <li class="label">文化</li>
-                        <li class="label">更多</li>
-                    </ul>
-                </div>
-                <div class="title-right">
-                    <span>换一批</span> <i class="anticon anticon-sync"></i>
-                </div>
-            </div>
-            <div class="box-content">
-                <div class="box-item">
-                    <div class="item-image">
-                        <div class="backdrop"></div>
-                        <img src="../../../assets/images/logo_otherpage.png" alt="">
-                        <div class="count">
-                            <div class="count-num">
-                                55556
-                            </div>    
-                        </div>
-                    </div>
-                    <div class="item-desc">
-                        我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述色和开机后即可忽然
-                    </div>
-                </div>
-                <div class="box-item">
-                    <div class="item-image">
-                        <div class="backdrop"></div>
-                        <img src="../../../assets/images/logo_otherpage.png" alt="">
-                        <div class="count">
-                            <div class="count-num">
-                                55556
-                            </div>    
-                        </div>
-                    </div>
-                    <div class="item-desc">
-                        我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述色和开机后即可忽然
-                    </div>
-                </div>
-                <div class="box-item">
-                    <div class="item-image">
-                        <div class="backdrop"></div>
-                        <img src="../../../assets/images/logo_otherpage.png" alt="">
-                        <div class="count">
-                            <div class="count-num">
-                                55556
-                            </div>    
-                        </div>
-                    </div>
-                    <div class="item-desc">
-                        我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述色和开机后即可忽然
-                    </div>
-                </div>
-                <div class="box-item">
-                    <div class="item-image">
-                        <div class="backdrop"></div>
-                        <img src="../../../assets/images/logo_otherpage.png" alt="">
-                        <div class="count">
-                            <div class="count-num">
-                                55556
-                            </div>    
-                        </div>
-                    </div>
-                    <div class="item-desc">
-                        我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述色和开机后即可忽然
                     </div>
                 </div>
             </div>

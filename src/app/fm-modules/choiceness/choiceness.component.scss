@@ -75,14 +75,16 @@
                     }
 
                     h2 {
+                        font-size: 20px;
                         display: inline-block;
                     }
                     ul {
                         display: inline-block;
 
                         .label {
+                            font-size: 14px;
                             color: #3d3d3d;
-                            margin-left: 5px;
+                            margin-left: 10px;
                             display: inline-block;
                             &:first-child {
                                 font-size: 18px;
