@@ -1,7 +1,7 @@
 <div class="carousel-container">
-    <nz-carousel nzAutoPlay>
-        <div nz-carousel-content *ngFor="let index of array">
-            <h3>{{index}}</h3>
+    <nz-carousel>
+        <div nz-carousel-content *ngFor="let item of items">
+            <img src="{{item.img_url}}" alt="">
         </div>
     </nz-carousel>
 </div>

@@ -1,21 +1,35 @@
 .carousel-container {
     width: 1004px;
     height: 328px;
-    background: red;
     margin: 0 auto;
 
     .ant-carousel .slick-slide {
         text-align: center;
         height: 328px;
         line-height: 328px;
-        background: -webkit-linear-gradient(
-            9deg,
-            rgb(255, 142, 39) 0%,
-            rgb(215, 45, 96) 100%
-        );
+        // background: -webkit-linear-gradient(
+        //     9deg,
+        //     rgb(23, 10, 53) 0%,
+        //     rgb(1, 6, 26) 100%
+        // );
         color: #fff;
         overflow: hidden;
+
+        img {
+            width: 800px;
+            height: 100%;
+            margin: 0 auto;
+        }
     }
+
+    // 颜色渐变
+    // .ant-carousel .slick-slide:nth-of-type(1) {
+    //     background: -webkit-linear-gradient(
+    //         9deg,
+    //         rgb(48, 47, 53) 0%,
+    //         rgb(45, 44, 52) 100%
+    //     );
+    // }
 
     h3 {
         color: #fff;
