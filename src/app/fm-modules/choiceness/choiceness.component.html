@@ -24,8 +24,8 @@
                 </div>
             <div class="box-content">
                 <!-- 取数组的前四个 -->
-                <div *ngFor="let cate of category.recommends.slice(0,4)"> 
-                    <div class="box-item" >
+                <ng-container *ngFor="let cate of category.recommends;let i = index;"> 
+                    <div class="box-item" *ngIf="i < 4" >
                         <div class="item-image">
                             <div class="backdrop"></div>
                             <img src="{{cate.img_url}}" alt="">
@@ -39,7 +39,7 @@
                             {{cate.title}}-{{cate.desc}}
                         </div>
                     </div>
-                </div>
+                </ng-container>
             </div>
         </div>
     </div>
@@ -57,116 +57,20 @@
                 </div>
             </div>
             <div class="radio-box">
-                <div class="radio-item">
-                    <a>
-                        <img src="../../../assets/images/QR_picture.png" alt="">
-                    </a>
-                    <div class="radio-item-right">
-                        <div class="right-name text-ellipsis">交通电台交电台交电台交电台交</div>
-                        <div class="right-desc text-ellipsis">我是描述</div>
-                        <div class="right-time text-ellipsis">10:00 - 11:00</div>
+                <ng-container *ngFor="let channel of channelList; let i = index;">
+                    <div class="radio-item" *ngIf="i < 15"  >
+                        <a>
+                            <img src="{{channel.cover}}" alt="">
+                        </a>
+                        <div class="radio-item-right">
+                            <div class="right-name text-ellipsis">{{channel.channel_title}}</div>
+                            <div class="right-desc text-ellipsis">{{channel.nowplaying.title}}</div>
+                            <div class="right-time text-ellipsis">
+                                {{channel.nowplaying.start_time}}-{{calcu(channel.nowplaying.start_time, channel.nowplaying.duration)}}
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="radio-item">
-                    <a>
-                        <img src="../../../assets/images/QR_picture.png" alt="">
-                    </a>
-                    <div class="radio-item-right">
-                        <div class="right-name text-ellipsis">交通电台交电台交电台交电台交</div>
-                        <div class="right-desc text-ellipsis">我是描述</div>
-                        <div class="right-time text-ellipsis">10:00 - 11:00</div>
-                    </div>
-                </div>
-                <div class="radio-item">
-                    <a>
-                        <img src="../../../assets/images/QR_picture.png" alt="">
-                    </a>
-                    <div class="radio-item-right">
-                        <div class="right-name text-ellipsis">交通电台交电台交电台交电台交</div>
-                        <div class="right-desc text-ellipsis">我是描述</div>
-                        <div class="right-time text-ellipsis">10:00 - 11:00</div>
-                    </div>
-                </div>
-                <div class="radio-item">
-                    <a>
-                        <img src="../../../assets/images/QR_picture.png" alt="">
-                    </a>
-                    <div class="radio-item-right">
-                        <div class="right-name text-ellipsis">交通电台交电台交电台交电台交</div>
-                        <div class="right-desc text-ellipsis">我是描述</div>
-                        <div class="right-time text-ellipsis">10:00 - 11:00</div>
-                    </div>
-                </div>
-                <div class="radio-item">
-                    <a>
-                        <img src="../../../assets/images/QR_picture.png" alt="">
-                    </a>
-                    <div class="radio-item-right">
-                        <div class="right-name text-ellipsis">交通电台交电台交电台交电台交</div>
-                        <div class="right-desc text-ellipsis">我是描述</div>
-                        <div class="right-time text-ellipsis">10:00 - 11:00</div>
-                    </div>
-                </div>
-                <div class="radio-item">
-                    <a>
-                        <img src="../../../assets/images/QR_picture.png" alt="">
-                    </a>
-                    <div class="radio-item-right">
-                        <div class="right-name text-ellipsis">交通电台交电台交电台交电台交</div>
-                        <div class="right-desc text-ellipsis">我是描述</div>
-                        <div class="right-time text-ellipsis">10:00 - 11:00</div>
-                    </div>
-                </div>
-                <div class="radio-item">
-                    <a>
-                        <img src="../../../assets/images/QR_picture.png" alt="">
-                    </a>
-                    <div class="radio-item-right">
-                        <div class="right-name text-ellipsis">交通电台交电台交电台交电台交</div>
-                        <div class="right-desc text-ellipsis">我是描述</div>
-                        <div class="right-time text-ellipsis">10:00 - 11:00</div>
-                    </div>
-                </div>
-                <div class="radio-item">
-                    <a>
-                        <img src="../../../assets/images/QR_picture.png" alt="">
-                    </a>
-                    <div class="radio-item-right">
-                        <div class="right-name text-ellipsis">交通电台交电台交电台交电台交</div>
-                        <div class="right-desc text-ellipsis">我是描述</div>
-                        <div class="right-time text-ellipsis">10:00 - 11:00</div>
-                    </div>
-                </div>
-                <div class="radio-item">
-                    <a>
-                        <img src="../../../assets/images/QR_picture.png" alt="">
-                    </a>
-                    <div class="radio-item-right">
-                        <div class="right-name text-ellipsis">交通电台交电台交电台交电台交</div>
-                        <div class="right-desc text-ellipsis">我是描述</div>
-                        <div class="right-time text-ellipsis">10:00 - 11:00</div>
-                    </div>
-                </div>
-                <div class="radio-item">
-                    <a>
-                        <img src="../../../assets/images/QR_picture.png" alt="">
-                    </a>
-                    <div class="radio-item-right">
-                        <div class="right-name text-ellipsis">交通电台交电台交电台交电台交</div>
-                        <div class="right-desc text-ellipsis">我是描述</div>
-                        <div class="right-time text-ellipsis">10:00 - 11:00</div>
-                    </div>
-                </div>
-                <div class="radio-item">
-                    <a>
-                        <img src="../../../assets/images/QR_picture.png" alt="">
-                    </a>
-                    <div class="radio-item-right">
-                        <div class="right-name text-ellipsis">交通电台交电台交电台交电台交</div>
-                        <div class="right-desc text-ellipsis">我是描述</div>
-                        <div class="right-time text-ellipsis">10:00 - 11:00</div>
-                    </div>
-                </div>
+                </ng-container>
             </div>
         </div>
     </div>

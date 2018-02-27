@@ -34,4 +34,13 @@ export class ChoicenessService {
     return this.hc.get(`http://recpage.c.qingting.fm/v2/hotpage/category/${attrs}`);
   }
 
+  /**
+   * 获取精选页面属性
+   * @param attrs 属性数组
+   * url: 'http://rapi.qingting.fm/recommendations/0/channel_list?more=true&replay=false'
+   */
+  public getChannelList(): Observable<any> {
+    return this.hc.get(`http://rapi.qingting.fm/recommendations/0/channel_list?more=true&replay=false`);
+  }
+
 }

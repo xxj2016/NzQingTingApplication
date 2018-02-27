@@ -12,6 +12,7 @@ export class ChoicenessComponent implements OnInit {
     public banners: Array<any>;
     public attrs: Array<any>;
     public categories: Array<any>;
+    public channelList: Array<any>;
 
     constructor(
         private choicenessService: ChoicenessService
@@ -25,10 +26,15 @@ export class ChoicenessComponent implements OnInit {
         // 获取轮播图
         this.choicenessService.getChiconessBanners().subscribe((banners) => {
             this.banners = banners['data'];
+        }, error => {
+            console.error(error);
         });
 
         // 获取属性
         this.getChiconessAttrs();
+
+        // 获取电台频道
+        this.getChannelList();
 
 
     }
@@ -50,6 +56,8 @@ export class ChoicenessComponent implements OnInit {
 
             // 获取分类内容
             this.getChiconessCategory(str);
+        }, error => {
+            console.error(error);
         });
     }
 
@@ -71,6 +79,29 @@ export class ChoicenessComponent implements OnInit {
                 });
             });
             console.log(this.categories);
+        }, error => {
+            console.error(error);
         });
+    }
+
+    // http://rapi.qingting.fm/recommendations/0/channel_list?more=true&replay=false
+    getChannelList() {
+        this.choicenessService.getChannelList().subscribe( channel => {
+            this.channelList = channel['Data'];
+            console.table(this.channelList);
+        }, error => {
+            console.error(error);
+        });
+    }
+
+    calcu(start_time, duration) {
+        const arr = start_time.split(':');
+        const hour = Number(arr[0]) * 3600;
+        const minute = Number(arr[1]) * 60;
+        const sum = hour + minute + duration;
+        const HOUR = Math.floor(sum / 3600);
+        const MINUTE = sum % 3600 / 60;
+        const newTime = String(HOUR + ':' + MINUTE);
+        return newTime;
     }
 }
