@@ -45,19 +45,36 @@
                 height: 18px;
                 // margin: 26px 25px 26px 0;
                 background-image: url("../../../assets/images/audio-player/prev@2x.png");
+
+                &:hover {
+                    background-image: url("../../../assets/images/audio-player/prev-hover@2x.png");
+                }
             }
 
             .play-pause {
                 width: 50px;
                 height: 50px;
                 background-image: url("../../../assets/images/audio-player/play@2x.png");
+
+                &:hover {
+                    background-image: url("../../../assets/images/audio-player/play-hover@2x.png");
+                }
             }
 
             .next {
                 width: 15px;
                 height: 18px;
                 background-image: url("../../../assets/images/audio-player/next@2x.png");
+
+                &:hover {
+                    background-image: url("../../../assets/images/audio-player/next-hover@2x.png");
+                }
             }
+        }
+
+        .audio-img {
+            width: 54px;
+            height: 54px;
         }
     }
 }
