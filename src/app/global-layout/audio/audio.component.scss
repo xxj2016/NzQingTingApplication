@@ -1,0 +1,64 @@
+.audio-player {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 999999;
+    width: 100%;
+    background-color: rgba($color: #000000, $alpha: .84);
+    line-height: 0;
+    // text-align: center;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+
+    .audio-wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 960px;
+        height: 70px;
+        margin: 0 auto;
+
+        .icon {
+            background-repeat: no-repeat;
+            background-size: cover;
+            cursor: pointer;
+        }
+
+        .audio-action,
+        .audio-img,
+        .detail,
+        .volume,
+        .history-icon,
+        .playlist-icon {
+            display: inherit;
+        }
+        
+        .audio-action {
+            justify-content: space-around;
+            align-items: center;
+            width: 138.91px;
+            height: inherit;
+            .prev {
+                width: 15px;
+                height: 18px;
+                // margin: 26px 25px 26px 0;
+                background-image: url("../../../assets/images/audio-player/prev@2x.png");
+            }
+
+            .play-pause {
+                width: 50px;
+                height: 50px;
+                background-image: url("../../../assets/images/audio-player/play@2x.png");
+            }
+
+            .next {
+                width: 15px;
+                height: 18px;
+                background-image: url("../../../assets/images/audio-player/next@2x.png");
+            }
+        }
+    }
+}
+
