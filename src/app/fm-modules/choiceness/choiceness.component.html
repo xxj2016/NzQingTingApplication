@@ -25,7 +25,7 @@
             <div class="box-content">
                 <!-- 取数组的前四个 -->
                 <ng-container *ngFor="let cate of category.recommends;let i = index;"> 
-                    <div class="box-item" *ngIf="i < 4" >
+                    <div class="box-item" *ngIf="i < 4" (click)="playThis(cate)">
                         <div class="item-image">
                             <div class="backdrop"></div>
                             <img src="{{cate.img_url}}" alt="">
@@ -75,3 +75,4 @@
         </div>
     </div>
 </div>
+<app-audio></app-audio>

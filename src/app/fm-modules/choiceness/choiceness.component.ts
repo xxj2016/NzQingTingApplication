@@ -104,4 +104,8 @@ export class ChoicenessComponent implements OnInit {
         const newTime = String(HOUR + ':' + MINUTE);
         return newTime;
     }
+
+    playThis(cate: any) {
+        console.log(cate);
+    }
 }

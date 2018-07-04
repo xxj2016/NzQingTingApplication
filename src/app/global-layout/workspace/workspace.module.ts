@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 import { HeaderComponent } from '../header/header.component';
-import { AudioComponent } from '../audio/audio.component';
 import { WorkspaceComponent } from './workspace.component';
 
 import { workspaceRoutes } from './workspace.routes';
@@ -22,7 +21,6 @@ import { NgZorroAntdModule } from 'ng-zorro-antd';
 
   declarations: [
     WorkspaceComponent,
-    AudioComponent,
     HeaderComponent
   ]
 })
