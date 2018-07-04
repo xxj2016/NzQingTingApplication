@@ -5,13 +5,11 @@
     z-index: 999999;
     width: 100%;
     background-color: rgba($color: #000000, $alpha: .84);
-    line-height: 0;
-    // text-align: center;
+    line-height: 0; // text-align: center;
     -webkit-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
-
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
     .audio-wrap {
         display: flex;
         justify-content: space-between;
@@ -19,13 +17,11 @@
         width: 960px;
         height: 70px;
         margin: 0 auto;
-
         .icon {
             background-repeat: no-repeat;
             background-size: cover;
             cursor: pointer;
         }
-
         .audio-action,
         .audio-img,
         .detail,
@@ -34,7 +30,6 @@
         .playlist-icon {
             display: inherit;
         }
-        
         .audio-action {
             justify-content: space-around;
             align-items: center;
@@ -42,47 +37,49 @@
             height: inherit;
             .prev {
                 width: 15px;
-                height: 18px;
-                // margin: 26px 25px 26px 0;
+                height: 18px; // margin: 26px 25px 26px 0;
                 background-image: url("../../../assets/images/audio-player/prev@2x.png");
-
                 &:hover {
                     background-image: url("../../../assets/images/audio-player/prev-hover@2x.png");
                 }
             }
-
             .play-pause {
                 width: 50px;
                 height: 50px;
                 background-image: url("../../../assets/images/audio-player/play@2x.png");
-
                 &:hover {
                     background-image: url("../../../assets/images/audio-player/play-hover@2x.png");
                 }
             }
-
             .next {
                 width: 15px;
                 height: 18px;
                 background-image: url("../../../assets/images/audio-player/next@2x.png");
-
                 &:hover {
                     background-image: url("../../../assets/images/audio-player/next-hover@2x.png");
                 }
             }
         }
-
         .audio-img {
             width: 54px;
             height: 54px;
         }
-
         .detail {
+            display: inherit;
+            flex-direction: column;
+            justify-content: space-around;
             width: 420px;
+            height: 70px;
             text-align: left;
-
             .program-meta {
-                .program-title, .podcaster, .channel-title {
+                display: block;
+                width: 100%;
+                &:hover {
+                    cursor: pointer
+                }
+                .program-title,
+                .podcaster,
+                .channel-title {
                     line-height: 1.3;
                     display: inline-block;
                     color: white;
@@ -99,6 +96,13 @@
                     font-size: 12px;
                     max-width: 100px;
                 }
+            }
+            .channel-meta {
+                display: block;
+                width: 100%;
+                &:hover {
+                    cursor: pointer
+                }
                 .channel-title {
                     margin-top: 6px;
                     max-width: 300px;
@@ -106,7 +110,111 @@
                     font-size: 12px;
                 }
             }
+            .progress {
+                width: 420px;
+                .time {
+                    font-size: 12px;
+                    line-height: 1.1;
+                    color: rgba(255, 255, 255, 0.3);
+                    text-align: right;
+                    margin: -6px 0 -4px 0;
+                    .time-elapsed {
+                        color: #E13430
+                    }
+                }
+                .progress-bar {
+                    padding: 7px 0;
+                    width: inherit;
+                    height: 8px;
+                    &:hover {
+                        cursor: pointer;
+                    }
+                    .progress-bar-total {
+                        position: absolute;
+                        width: inherit;
+                        height: 4px;
+                        background-color: rgba(255, 255, 255, 0.3);
+                        border-radius: 2px;
+                    }
+                    .progress-bar-elapsed {
+                        position: absolute;
+                        border-radius: 2px;
+                        background-color: #E13430;
+                        height: 4px;
+                        .progress-bar-handle {
+                            position: absolute;
+                            width: 10px;
+                            height: 10px;
+                            border-radius: 5px;
+                            background-color: white;
+                            top: -3px;
+                            right: -5px
+                        }
+                    }
+                }
+            }
+        }
+        .volume {
+            display: inherit;
+            justify-content: space-between;
+            align-items: center;
+            width: 116.45px;
+            height: inherit;
+            .volume-icon {
+                width: 22px;
+                height: 22px;
+                background-image: url("../../../assets/images/audio-player/volume@2x.png");
+                &:hover {
+                    background-image: url("../../../assets/images/audio-player/volume-hover@2x.png");
+                }
+                &.muted {
+                    background-image: url("../../../assets/images/audio-player/volume-mute@2x.png");
+                }
+            }
+            .volume-bar {
+                position: relative;
+                width: 90px;
+                .volume-bar-full {
+                    position: absolute;
+                    width: 100%;
+                    height: 3px;
+                    border-radius: 2px;
+                    background-color: #9B9B9B;
+                }
+                .volume-bar-current {
+                    position: absolute;
+                    widows: 100%;
+                    height: 3px;
+                    border-radius: 2px;
+                    background-color: white;
+                    .volume-bar-handle {
+                        position: absolute;
+                        width: 7px;
+                        height: 7px;
+                        border-radius: 4px;
+                        background-color: white;
+                        bottom: 0px;
+                        top: -2px;
+                        right: -3px;
+                    }
+                }
+            }
+        }
+        .history-icon {
+            width: 22px;
+            height: 22px;
+            background-image: url("../../../assets/images/audio-player/history@2x.png");
+            &:hover {
+                background-image: url("../../../assets/images/audio-player/history-hover@2x.png");
+            }
+        }
+        .playlist-icon {
+            width: 22px;
+            height: 22px;
+            background-image: url("../../../assets/images/audio-player/playlist@2x.png");
+            &:hover {
+                background-image: url("../../../assets/images/audio-player/playlist-hover@2x.png");
+            }
         }
     }
 }
-
