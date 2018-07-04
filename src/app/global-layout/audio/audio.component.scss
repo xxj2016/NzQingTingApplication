@@ -76,6 +76,37 @@
             width: 54px;
             height: 54px;
         }
+
+        .detail {
+            width: 420px;
+            text-align: left;
+
+            .program-meta {
+                .program-title, .podcaster, .channel-title {
+                    line-height: 1.3;
+                    display: inline-block;
+                    color: white;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                }
+                .program-title {
+                    font-size: 14px;
+                    max-width: 300px;
+                }
+                .podcaster {
+                    margin-left: 10px;
+                    font-size: 12px;
+                    max-width: 100px;
+                }
+                .channel-title {
+                    margin-top: 6px;
+                    max-width: 300px;
+                    color: #FF7C36;
+                    font-size: 12px;
+                }
+            }
+        }
     }
 }
 
