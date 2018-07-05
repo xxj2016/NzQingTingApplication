@@ -5,14 +5,14 @@
       <div class="play-pause icon paused"></div>
       <div class="next icon"></div>
     </div>
-    <img class="audio-img" src="../../../assets/images/audio-player/audio-img.jpg!200" alt="audio-image">
+    <img class="audio-img" [src]="detail?.img_url || '../../../assets/images/audio-player/apple-touch-icon.png'" alt="audio-image">
     <div class="detail">
       <div class="program-meta">
-        <span class="program-title">VOL.613 环太军演“孤立”中国？太自恋了吧</span>
-        <span class="podcaster">六六六</span>
+        <span class="program-title">{{detail?.sub_name}}</span>
+        <span class="podcaster">{{detail?.author}}</span>
       </div>
       <div class="channel-meta">
-        <span class="channel-title">胡言不乱语</span>
+        <span class="channel-title">{{detail?.name}}</span>
       </div>
       <div class="progress">
         <div class="time">
@@ -39,3 +39,4 @@
     <div class="playlist-icon icon"></div>
   </div>
 </div>
+<audio *ngIf="detail?.file_path" src="http://od.qingting.fm/{{detail?.file_path}}" autoplay></audio>

@@ -13,7 +13,8 @@ export class ChoicenessComponent implements OnInit {
     public attrs: Array<any>;
     public categories: Array<any>;
     public channelList: Array<any>;
-    public channel: Array<any>;
+    public channels: Array<any>;
+    public channel_id: number;
 
     constructor(
         private choicenessService: ChoicenessService
@@ -107,8 +108,10 @@ export class ChoicenessComponent implements OnInit {
     }
 
     playThis(cate: any) {
+        console.log(cate);
+        this.channel_id = cate.id;
         this.choicenessService.getPrograme(cate.id, 1).subscribe((channels) => {
-            this.channel = channels['data'][0];
+            this.channels = channels['data'];
         }, error => {
             console.error(error);
         });

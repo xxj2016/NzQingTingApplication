@@ -73,14 +73,14 @@
                     .sprite3 {
                         background-image: url("../../../assets/images/sprite3.png");
                     }
-
+                    
                     h2 {
                         font-size: 20px;
                         display: inline-block;
                     }
                     ul {
                         display: inline-block;
-
+                        
                         .label {
                             font-size: 14px;
                             color: #3d3d3d;
@@ -110,16 +110,16 @@
             .box-content {
                 display: flex;
                 justify-content: space-between;
-
+                
                 .box-item {
                     width: 140px;
-
+                    
                     .item-image {
                         position: relative;
                         height: 140px;
                         cursor: pointer;
                         margin-bottom: 10px;
-
+                        
                         .backdrop {
                             position: absolute;
                             width: 140px;
@@ -128,7 +128,21 @@
                             opacity: 0.5;
                             display: none;
                         }
+                        
+                        .sprite2 {
+                            background-image: url("../../../assets/images/sprite2.png");
+                        }
 
+                        .sprite2-play {
+                            display: none;
+                            position: absolute;
+                            margin-top: -98px;
+                            margin-left: 49px;
+                            width: 42px;
+                            height: 42px;
+                            background-position: -386px 0;
+                        }
+                        
                         img {
                             width: 140px;
                             height: 140px;
@@ -156,7 +170,7 @@
                             }
                         }
                     }
-                    .item-image:hover .backdrop {
+                    .item-image:hover .backdrop, .item-image:hover .sprite2-play {
                         display: block;
                     }
                     .item-desc {

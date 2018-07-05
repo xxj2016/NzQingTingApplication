@@ -34,6 +34,7 @@
                                     {{cate.playcount}} {{index}}
                                 </div>    
                             </div>
+                            <div class="sprite2 sprite2-play"></div>
                         </div>
                         <div class="item-desc">
                             {{cate.title}}-{{cate.desc}}
@@ -75,4 +76,4 @@
         </div>
     </div>
 </div>
-<app-audio [channel]="channel"></app-audio>
+<app-audio [channels]="channels" [channelId]="channel_id"></app-audio>
