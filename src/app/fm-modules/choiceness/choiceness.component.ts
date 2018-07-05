@@ -13,7 +13,7 @@ export class ChoicenessComponent implements OnInit {
     public attrs: Array<any>;
     public categories: Array<any>;
     public channelList: Array<any>;
-    public channels: Array<any>;
+    public channel: Array<any>;
 
     constructor(
         private choicenessService: ChoicenessService
@@ -108,18 +108,7 @@ export class ChoicenessComponent implements OnInit {
 
     playThis(cate: any) {
         this.choicenessService.getPrograme(cate.id, 1).subscribe((channels) => {
-            // this.channels = _.valuesIn(channels['data']);
-            this.channels = channels['data'];
-            // console.log(_.toPairsIn(this.categories)); // 返回键值对的数组
-            // console.log(this.categories); // 返回对象属性的值的数组
-            // this.categories.forEach(cate => {
-            //     this.attrs.forEach(attr => {
-            //        if (cate.more.category_id === String(attr.id)) {
-            //            cate.attr = attr;
-            //        }
-            //     });
-            // });
-            console.log(this.channels);
+            this.channel = channels['data'][0];
         }, error => {
             console.error(error);
         });
